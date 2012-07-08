@@ -100,6 +100,16 @@ class BadJobWithSyntaxError
   end
 end
 
+class GoodRailsJob
+  def initialize(name)
+    @name = name
+  end
+
+  def run
+    "Good Rails job, #{@name}"
+  end
+end
+
 class BadFailureBackend < Resque::Failure::Base
   def save
     raise Exception.new("Failure backend error")

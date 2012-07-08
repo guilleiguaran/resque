@@ -19,6 +19,8 @@ require 'resque/json_coder'
 
 require 'resque/vendor/utf8_util'
 
+require 'resque/rails/queue' if defined?(Rails) && Rails::VERSION::MAJOR >= 4
+
 module Resque
   include Helpers
   extend self
